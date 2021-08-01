@@ -1,12 +1,12 @@
 #!/bin/bash
 #chkconfig:345 61 61
-#description: Spring Boot App Script
+#description: Golang App Script
 #auther: Wang Chen Chen
 
-#App 名称
+# App 名称
 APP_NAME=gin_oauth2_server
 
-#环境变量
+# 环境变量
 export Profile=prod
 
 # 第一个参数 start|stop|restart|status 中的一个
@@ -16,7 +16,7 @@ then
     exit 1
 fi
 
-# 启动服务
+# 启动
 function start()
 {
     PID=`ps -ef |grep $APP_NAME|grep -v grep|wc -l`
@@ -29,7 +29,7 @@ function start()
 }
 
 
-# 停止服务
+# 停止
 function stop()
 {
 	PID=""
@@ -52,7 +52,7 @@ function stop()
 }
 
 
-# 重启服务
+# 重启
 function restart()
 {
     stop
@@ -61,7 +61,7 @@ function restart()
 }
 
 
-# 查看服务状态
+# 查看状态
 function status()
 {
     PID=`ps -ef |grep $APP_NAME|grep -v grep|wc -l`

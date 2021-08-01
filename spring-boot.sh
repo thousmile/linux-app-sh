@@ -20,7 +20,7 @@ APP_NAME=$2
 # spring.profiles.active 配置激活环境
 SPRING_ENV=$3
 
-#JVM参数
+# JVM参数
 JVM_OPTS="-server -Xms256m -Xmx256m -XX:+HeapDumpOnOutOfMemoryError -Dname=$APP_NAME -Dfile.encoding=UTF-8 -Duser.timezone=Asia/Shanghai -Djava.security.egd=file:/dev/./urandom"
 
 #JDK路径
@@ -49,7 +49,7 @@ then
 fi
 
 
-# 启动服务
+# 启动
 function start()
 {
     PID=`ps -ef |grep java|grep $APP_NAME|grep -v grep|wc -l`
@@ -62,7 +62,7 @@ function start()
 }
 
 
-# 停止服务
+# 停止
 function stop()
 {
 	PID=""
@@ -85,7 +85,7 @@ function stop()
 }
 
 
-# 重启服务
+# 重启
 function restart()
 {
     stop
@@ -94,7 +94,7 @@ function restart()
 }
 
 
-# 查看服务状态
+# 查看状态
 function status()
 {
     PID=`ps -ef |grep java|grep $APP_NAME|grep -v grep|wc -l`
